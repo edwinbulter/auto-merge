@@ -107,7 +107,6 @@ export default function ({ title, labels = [], config = [], dependencies = {} })
     ) {
       core.info(`config: ${dependency_name || dependency_type}:${update_type}`)
 
-      core.warning('Now in parse.js!!!!!!!!!')
       switch (true) {
         case update_type === 'none':
           core.warning(`${dependency_name || dependency_type}:${update_type} detected, skipping auto-merge because update_type is none`)
