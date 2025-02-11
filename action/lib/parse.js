@@ -113,7 +113,7 @@ export default function ({ title, labels = [], config = [], dependencies = {} })
           return process.exit(0) // soft exit
 
         case update_type === 'in_range':
-          core.warning('in_range update type not supported yet')
+          core.warning('in_range update type not supported yet (some text to check if the new version is used)')
           return process.exit(0) // soft exit
 
         case update_type === 'all':
