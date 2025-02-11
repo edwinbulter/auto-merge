@@ -110,7 +110,7 @@ export default function ({ title, labels = [], config = [], dependencies = {} })
       switch (true) {
         case update_type === 'none':
           core.warning(`${dependency_name || dependency_type}:${update_type} detected, skipping auto-merge because update_type is none`)
-          return process.exit(0) // soft exit
+          return false
 
         case update_type === 'in_range':
           core.warning('in_range update type not supported yet (some text to check if the new version is used)')
