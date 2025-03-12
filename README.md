@@ -206,3 +206,4 @@ if your config is anything other than `update_type: all`, or `update_type: semve
 [release-url]: https://github.com/ahmadnassri/action-dependabot-auto-merge/releases
 [release-img]: https://badgen.net/github/release/ahmadnassri/action-dependabot-auto-merge
 
+test
