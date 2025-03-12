@@ -3,7 +3,6 @@
 # ---------------------------------------------------- #
 
 on:
-  - push
   - workflow_dispatch
 
 name: push
@@ -28,18 +27,6 @@ jobs:
 
       - id: image
         run: echo "name=$(basename "${GITHUB_REPOSITORY/docker-//}")" >> "$GITHUB_OUTPUT"
-
-  commit-lint:
-    timeout-minutes: 5
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3.2.0
-
-      - uses: ahmadnassri/action-commit-lint@v2.0.12
-        with:
-          config: .github/linters/.commit-lint.yml
 
   mega-linter:
     timeout-minutes: 5
@@ -67,7 +54,6 @@ jobs:
   release:
     needs:
       - metadata
-      - commit-lint
       - mega-linter
 
     # only runs on main branch for non template repos
@@ -167,7 +153,6 @@ jobs:
 
     needs:
       - metadata
-      - commit-lint
       - mega-linter
 
     # only runs on main branch for template repos
